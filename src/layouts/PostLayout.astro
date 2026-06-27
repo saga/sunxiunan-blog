@@ -112,25 +112,7 @@ const galleryImages = getGalleryImages(post.filePath ?? '');
       )}
 	  </article>
 
-    <!-- Tags -->
-    {
-      post.data.tags &&
-        post.data.tags.length > 0 && (
-          <div class="flex flex-wrap items-baseline gap-3">
-            <SectionHeader title="filed under" />
-            {post.data.tags.map(
-              (tag) => (
-                <a
-                  href={`/tags/${slugify(tag)}`}
-                  class="text-sm underline font-ui text-muted-foreground link-hover"
-                >
-                  {tag}
-                </a>
-              )
-            )}
-          </div>
-        )
-    }
+
   </section>
   
   <Fragment slot="navigation">
