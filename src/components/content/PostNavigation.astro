@@ -11,7 +11,7 @@ interface Props {
 const { prevPost, nextPost } = Astro.props;
 ---
 <section class="flex flex-col">
-  <nav class="post-navigation my-2" aria-label="Post navigation">
+  <nav class="post-navigation" aria-label="Post navigation">
     {/* GLOBAL PREV / NEXT */}
     {(prevPost || nextPost) && (
       <div class:list={[

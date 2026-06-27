@@ -12,14 +12,13 @@ const userConfig: UserConfig = {
   avatar: "/avatar.png",
 
   navigation: [
-    { title: "Writing", url: "/posts" },
-    { title: "Archive", url: "/archive" },
-    { title: "About", url: "/about" },
+    { title: "文章", url: "/posts" },
+    { title: "归档", url: "/archive" },
   ],
 
   footerLinks: [
     { title: "RSS", url: "/rss.xml" },
-    { title: "Archive", url: "/archive" },
+    { title: "归档", url: "/archive" },
     { title: "Source", url: "https://github.com/saga" },
     
   ],
@@ -39,7 +38,7 @@ const userConfig: UserConfig = {
   recentPosts: 6,
   relatedPosts: 4,
 
-  showThemeToggle: true,
+  showThemeToggle: false,
   showReadingTime: true,
 
   heroVariant: "studio",

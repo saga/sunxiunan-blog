@@ -165,7 +165,7 @@ html {
   }
 
   .divider {
-    @apply h-px bg-border mt-2.5;
+    @apply h-px bg-border mt-8;
   }
 
   .sec-divider {
@@ -220,7 +220,7 @@ html {
   }
 
   .gallery-item {
-    @apply block overflow-hidden bg-background cursor-zoom-in rounded-sm ring ring-border;
+    @apply block overflow-hidden bg-background cursor-zoom-in rounded-sm;
     transition: box-shadow 0.2s ease;
     &:hover { @apply shadow-md; }
   }

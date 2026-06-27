@@ -67,10 +67,10 @@ const galleryImages = getGalleryImages(post.filePath ?? '');
   <Fragment slot="header">
     <Breadcrumb />
     <!-- Post Header -->
-    <header class="space-y-4">
+    <header class="flex flex-col -mb-6 sm:-mb-8">
       <!-- Title -->
-      <h1 
-          class="text-3xl leading-tight tracking-tight font-medium md:text-4xl mb-2 text-balance"
+      <h1
+          class="text-3xl leading-tight tracking-tight font-medium md:text-4xl mb-4 text-balance"
           transition:name={slugify(post.data.title.replaceAll(".", "-"))}
       >
           {post.data.title}
@@ -78,17 +78,19 @@ const galleryImages = getGalleryImages(post.filePath ?? '');
 
 
       <!-- Metadata -->
-      <div class="post-meta flex flex-row items-baseline gap-2 mb-3 text-xs font-ui text-muted-foreground">
+      <div class="post-meta flex flex-row items-baseline gap-2 text-xs font-ui text-muted-foreground">
         <PostMeta post={post} accentCategory showReadingTime />
       </div>
-      <div class="divider" />
+      <div class="py-8">
+        <div class="divider !mt-0" />
+      </div>
     </header>
   </Fragment>
 
   <section>
     <!-- Cover -->
     {coverImage && (
-      <section class="breakout overflow-hidden rounded-sm ring ring-border shadow-sm">
+      <section class="breakout overflow-hidden rounded-sm shadow-sm">
         <ImageWrapper src={coverImage} alt={title} class="block w-full h-auto" fetchPriority="high" />
       </section>
     )}
@@ -104,7 +106,7 @@ const galleryImages = getGalleryImages(post.filePath ?? '');
       <!-- Rendered markdown -->
 	    <div class="app-prose post-content">
 	      <slot />
-        <hr />
+	      <hr />
 	    </div>
       <!-- Galley -->
       {galleryImages.length > 0 && (
@@ -114,8 +116,8 @@ const galleryImages = getGalleryImages(post.filePath ?? '');
 
 
   </section>
-  
-  <div slot="navigation" class="mt-4 sm:mt-6">
+
+  <div slot="navigation">
     <PostNavigation
       prevPost={prevPost}
       nextPost={nextPost}
