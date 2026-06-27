@@ -76,15 +76,7 @@ const galleryImages = getGalleryImages(post.filePath ?? '');
           {post.data.title}
       </h1>
 
-      <!-- Description -->
-      {
-        post.data.description && (
-          <p class="max-w-xl text-base text-prettyfont-content italic font-light leading-relaxed text-muted-foreground">
-            {post.data.description}
-          </p>
-        )
-      }
-      
+
       <!-- Metadata -->
       <div class="post-meta flex flex-row items-baseline gap-2 mb-3 text-xs font-ui text-muted-foreground">
         <PostMeta post={post} accentCategory showReadingTime />
@@ -139,8 +131,6 @@ const galleryImages = getGalleryImages(post.filePath ?? '');
           </div>
         )
     }
-    <SharePost title={post.data.title} />
-    <div class="divider" />
   </section>
   
   <Fragment slot="navigation">
