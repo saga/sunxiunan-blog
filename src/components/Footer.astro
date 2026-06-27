@@ -15,10 +15,7 @@ const {
 <footer class="border-border mt-12 border-t py-8 ">
   <div class="app-layout">
     <div class="flex flex-col items-center">
-      <span class="block mb-3 text-xl font-semibold tracking-tight">
-        {siteConfig.author}<span class="text-primary font-normal">.</span>
-      </span>
-      <span class="font-code text-muted-foreground text-balance tracking-wide text-sm text-center leading-relaxed" set:html={meta} />
+
       {annotation && (
         <span class="font-annotation block text-muted-foreground max-w-70 md:max-w-80 mx-auto mt-6 text-sm text-center -rotate-1 leading-snug">
           {annotation}

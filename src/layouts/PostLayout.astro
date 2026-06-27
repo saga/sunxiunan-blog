@@ -122,10 +122,10 @@ const galleryImages = getGalleryImages(post.filePath ?? '');
       )}
 	  </article>
 
-    {/* Post annotation — document-level context, posts only, no footer fallback */}
-    {post.data.annotation && (
+    {/* Post annotation — falls back to site-wide annotation */}
+    {(post.data.annotation || siteConfig.annotation) && (
       <span class="font-annotation block text-muted-foreground max-w-70 md:max-w-80 mt-4 text-sm -rotate-1 leading-snug">
-        {post.data.annotation}
+        {post.data.annotation ?? siteConfig.annotation}
       </span>
     )}
 
