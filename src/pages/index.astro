@@ -15,8 +15,7 @@ const structuredData = generateWebsiteSchema();
 <BaseLayout schema={structuredData}>
 	<SEO slot="seo" title="Home" description={siteConfig.description} ogImage="/og/default.png" />
 	<h1 class="sr-only">{siteConfig.title}</h1>
-	
-	<HomeHero />
+
 	<!-- <MastHead /> -->
 	<FeaturedPost post={allPosts[0]} />
 	<RecentPosts posts={allPosts.slice(1, siteConfig.recentPosts)} sectionTitle="Recent" />
