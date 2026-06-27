@@ -88,8 +88,8 @@
      ========================================= */
 
   .app-prose :where(img) {
-    @apply rounded-sm;    
-    margin-block: 0;
+    @apply rounded-sm;
+    margin-block: 2rem;
   }
 
   html[data-theme="dark"] .app-prose :where(img) {

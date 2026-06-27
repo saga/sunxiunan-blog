@@ -7,7 +7,9 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && npx pagefind --site dist && cp -r dist/pagefind public/",
+    "full_open_graph_build": "astro build && npx pagefind --site dist && cp -r dist/pagefind public/",
+    "build": "SKIP_OG=1 astro build && npx pagefind --site dist && cp -r dist/pagefind public/",
+    "build:astro": "SKIP_OG=1 astro build",
     "preview": "astro preview",
     "lint": "biome lint .",
     "format": "pnpm run format:code && pnpm run format:imports",

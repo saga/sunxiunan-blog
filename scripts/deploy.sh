@@ -48,8 +48,8 @@ done
 
 # ===== Build =====
 if [ "$DO_BUILD" = true ] || [ ! -d "dist" ]; then
-  echo ">>> Building..."
-  npm run build
+  echo ">>> Building (fast, skip OG)..."
+  npm run build:fast
 fi
 
 if [ ! -d "dist" ]; then

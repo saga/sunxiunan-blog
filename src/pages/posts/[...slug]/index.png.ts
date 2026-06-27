@@ -15,6 +15,9 @@ import {
 } from "@/utils/og";
 
 export async function getStaticPaths() {
+  // Skip per-post OG image generation when SKIP_OG=1 (big speedup for local builds).
+  if (process.env.SKIP_OG === "1") return [];
+
   const posts =
     await getCollection("posts");
 
