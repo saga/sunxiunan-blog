@@ -22,17 +22,18 @@ const { lang = "en", schema } = Astro.props;
 
     <Header />
     <!-- Main content -->
-    <main class="app-layout flex flex-col space-y-6 sm:space-y-8">
-      
+    <main class="app-layout flex flex-col">
 
-      {/* Page/Post Header Section */}
-      <slot name="header" />
+      <div class="space-y-6 sm:space-y-8">
+        {/* Page/Post Header Section */}
+        <slot name="header" />
 
-      {/* Page/Post Meta Section */}
-      <slot name="meta" />
+        {/* Page/Post Meta Section */}
+        <slot name="meta" />
 
-      {/* Page/Post Content */}
-      <slot />
+        {/* Page/Post Content */}
+        <slot />
+      </div>
 
       {/* Post Navigation */}
       <slot name="navigation" />

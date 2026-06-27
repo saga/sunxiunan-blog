@@ -115,12 +115,12 @@ const galleryImages = getGalleryImages(post.filePath ?? '');
 
   </section>
   
-  <Fragment slot="navigation">
+  <div slot="navigation" class="mt-4 sm:mt-6">
     <PostNavigation
       prevPost={prevPost}
       nextPost={nextPost}
     />
-  </Fragment>
+  </div>
   <!-- Related posts removed -->
   <Fragment slot="scripts">
     <ReadingProgress />
