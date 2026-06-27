@@ -43,17 +43,6 @@ function formatDay(date: Date) {
       placeholder="Search titles..."
       class="w-full sm:w-72 rounded border border-border bg-background px-3 py-2 text-sm"
     />
-
-    <label
-      class="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer"
-    >
-      <input
-        id="english-only"
-        type="checkbox"
-        class="accent-primary"
-      />
-      <span>English only</span>
-    </label>
   </div>
   <nav
     id="archive-filters"
@@ -198,17 +187,7 @@ function formatDay(date: Date) {
       updateVisibility(activeFilter);
     });
 
-    const englishToggle = document.getElementById("english-only") as HTMLInputElement | null;
     let searchQuery = "";
-    let englishOnly = false;
-
-    englishToggle?.addEventListener("change", (e) => {
-      englishOnly = (
-        e.currentTarget as HTMLInputElement
-      ).checked;
-
-      updateVisibility(activeFilter);
-    });
 
     // Read initial filter from URL
     const params = new URLSearchParams(window.location.search);
@@ -274,14 +253,9 @@ function formatDay(date: Date) {
         searchQuery === "" ||
         title.includes(searchQuery);
 
-      const languageMatch =
-        !englishOnly ||
-        lang === "en";
-
       return (
         tagMatch &&
-        searchMatch &&
-        languageMatch
+        searchMatch
       );
     }
 

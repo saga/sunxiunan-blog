@@ -410,6 +410,10 @@ async function processPost(post) {
     .replace(/\r\n/g, "\n")
     // strip TinyMCE editor emotion GIFs (non-existent relative paths)
     .replace(/!\[\]\(\.\.\/editor\/plugins\/emotions\/images\/\d+\.gif\)/g, "")
+    // escape "#tag" at line start (e.g. "#top ...") so it's not parsed as H1.
+    // NOTE: this also affects "#include" outside code blocks, but that's fine —
+    // those lines should have been in code blocks anyway, and "\#" renders as "#".
+    .replace(/^(#[a-zA-Z])/gm, "\\$1")
     .replace(/\n{3,}/g, "\n\n")
     .replace(/^\s+|\s+$/g, "");
 

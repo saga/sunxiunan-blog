@@ -7,16 +7,16 @@ category: tech
 
 In my testing, it could work with Outlook2013.
 
-\# http://mail.python.org/pipermail//python-win32/2011-August/011754.html  
-\# http://www.java2s.com/Tutorial/Python/0460\_\_Windows/OutlookExample.htm  
-\# http://www.outlookcode.com/
+# http://mail.python.org/pipermail//python-win32/2011-August/011754.html  
+# http://www.java2s.com/Tutorial/Python/0460\_\_Windows/OutlookExample.htm  
+# http://www.outlookcode.com/
 
 import win32com.client
 
 outlook = win32com.client.Dispatch(“Outlook.Application”)  
 outlook2 = win32com.client.Dispatch(“Outlook.Application”).GetNamespace(“MAPI”)
 
-\# Count the number of messages in the inbox  
+# Count the number of messages in the inbox  
 #inbox = outlook2.GetDefaultFolder(win32com.client.constants.olFolderInbox)  
 #messages = inbox.Items  
 #print “number of messages in inbox:”, messages.Count
