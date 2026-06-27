@@ -165,7 +165,7 @@ html {
   }
 
   .divider {
-    @apply h-px bg-border mt-8;
+    @apply h-px bg-border mt-2.5;
   }
 
   .sec-divider {

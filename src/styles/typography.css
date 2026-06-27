@@ -79,7 +79,7 @@
      ========================================= */
 
   .app-prose :where(hr) {
-    @apply h-px border-0 m-12;
+    @apply h-px border-0 my-4;
     background: linear-gradient(90deg,transparent,var(--color-accent) 20%,var(--color-accent) 80%,transparent);
   }
 
