@@ -226,7 +226,7 @@ html {
   }
 
   .gallery-item__image {
-    @apply w-full h-full object-cover block aspect-3/2 rounded-sm ;
+    @apply w-full h-auto block rounded-sm ;
     transition: opacity 0.2s ease, filter 0.2s ease;
   }
 
