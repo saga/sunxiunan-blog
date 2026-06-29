@@ -1,0 +1,38 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Create .env for deploy script
+        run: |
+          echo "REMOTE_HOST=${{ secrets.REMOTE_HOST }}" >> .env
+          echo "REMOTE_PORT=${{ secrets.REMOTE_PORT }}" >> .env
+          echo "password=${{ secrets.REMOTE_PASSWORD }}" >> .env
+
+      - name: Build site
+        run: npm run build
+
+      - name: Install expect
+        run: sudo apt-get update && sudo apt-get install -y expect
+
+      - name: Deploy to server
+        run: ./scripts/deploy.sh
